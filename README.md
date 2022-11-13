@@ -24,6 +24,20 @@ curl localhost:8080
 
 ## build.gradle
 
+> Lägg till plugin för spring boot.
+> id 'org.springframework.boot' version '2.6.2'
+
+> Lägg till en plugin som håller reda på spring boot beroenden
+> id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+
+> Ta bort application pluginnen och dess konfiguration
+
+> Lägg till minimi dependency för spring boot
+> implementation 'org.springframework.boot:spring-boot-starter-web:'
+
+> Kolla gärna vilken version som är den senaste
+
+
 ```groovy
 plugins {
     id 'java'
@@ -49,6 +63,10 @@ tasks.named('test') {
 
 ## App.java
 
+> Märk upp App som en @SpringBootApplication
+
+> Ändra så att applikationen startas som en spring boot applikation.
+
 ```java
 package se.iths;
 
@@ -67,6 +85,8 @@ public class App {
 
 ## AppTest.java
 
+> Ta bort asserten, men behåll testet ett tag till.
+> 
 ```java
 package se.iths;
 
