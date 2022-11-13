@@ -8,7 +8,9 @@ cd ws
 rm -rf edu-intro-java #Försiktig med denna
 mkdir edu-intro-java
 cd edu-intro-java
-gradle init
+gradle init #svara på frågor
+gradle check
+gradle run
 ```
 
 # gradle init
