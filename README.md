@@ -11,63 +11,63 @@ cd edu-intro-java
 gradle init #svara på frågor
 gradle check
 gradle run
+vi ./app/build.gradle
+vi ./app/
 ```
 
-# gradle init
+## build.gradle
 
-```bash
-Select type of project to generate:
-  1: basic
-  2: application
-  3: library
-  4: Gradle plugin
-Enter selection (default: basic) [1..4] 2
+```groovy
+plugins {
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+}
+
+repositories {
+     mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    
+    implementation 'org.springframework.boot:spring-boot-starter-web:'
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+  testLogging.showStandardStreams = true
+}
 ```
 
+## App.java
 
-```bash
-Select implementation language:
-  1: C++
-  2: Groovy
-  3: Java
-  4: Kotlin
-  5: Scala
-  6: Swift
-Enter selection (default: Java) [1..6] 3
+```java
+package se.iths;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class App {
+
+    public static void main(String[] args) {
+        SpringApplication.run(App.class);
+    }
+
+}
 ```
 
-```bash
-Split functionality across multiple subprojects?:
-  1: no - only one application project
-  2: yes - application and library projects
-Enter selection (default: no - only one application project) [1..2] 1
+## AppTest.java
+
+```java
+package se.iths;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class AppTest {
+    @Test void appHasAGreeting() {
+
+    }
+}
 ```
-
-```bash
-Select build script DSL:
-  1: Groovy
-  2: Kotlin
-Enter selection (default: Groovy) [1..2] 1
-```
-
-```bash
-Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] [enter]
-````
-
-```bash
-Select test framework:
-  1: JUnit 4
-  2: TestNG
-  3: Spock
-  4: JUnit Jupiter
-Enter selection (default: JUnit Jupiter) [1..4] 4
-```
-
-```bash
-Project name (default: edu-intro-java): [enter]
-```
-
-```bash
-Source package (default: edu.intro.java): se.iths
-```
-
