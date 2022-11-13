@@ -61,9 +61,11 @@ Select test framework:
 Enter selection (default: JUnit Jupiter) [1..4] 4
 ```
 
-```
+```bash
 Project name (default: edu-intro-java): [enter]
 ```
+
+```bash
 Source package (default: edu.intro.java): se.iths
 ```
 
