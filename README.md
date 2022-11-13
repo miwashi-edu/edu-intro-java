@@ -12,7 +12,8 @@ gradle init #svara på frågor
 gradle check
 gradle run
 vi ./app/build.gradle
-vi ./app/
+vi ./app/src/main/java/se/iths/App.java
+vi ./app/src/test/java/se/iths/AppTest.java
 ```
 
 ## build.gradle
