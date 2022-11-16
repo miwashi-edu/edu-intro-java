@@ -5,13 +5,8 @@
 ```bash
 cd ~
 cd ws
-rm -rf edu-intro-java #Försiktig med denna
-mkdir edu-intro-java
-cd edu-intro-java
-gradle init #svara på frågor
-gradle check
-gradle run
-mkdir ./app/src/main/static
+cd edu-intro-java #Återvänd till projektet
+mkdir ./app/src/main/resources/static
 touch ./app/src/main/resources/static/index.html
 touch ./app/src/main/resources/static/index.css
 touch ./app/src/main/resources/static/index.js
@@ -19,6 +14,7 @@ vi ./app/build.gradle
 vi ./app/src/main/java/se/iths/App.java
 vi ./app/src/test/java/se/iths/AppTest.java
 vi ./app/src/main/resources/static/index.html
+gradle bootRun
 curl localhost:8080
 ```
 
