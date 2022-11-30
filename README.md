@@ -3,10 +3,10 @@
 # Instruktioner
 
 ```bash
-mkdir ./app/src/resources/static
-touch ./app/src/resources/static/index.html
-touch ./app/src/resources/static/index.css
-touch ./app/src/resources/static/index.js
+mkdir ./app/src/main/resources/static
+touch ./app/src/main/resources/static/index.html
+touch ./app/src/main/resources/static/index.css
+touch ./app/src/main/resources/static/index.js
 ```
 
 ## ./app/build.gradle
@@ -65,7 +65,7 @@ class AppTest {
 }
 ```
 
-## ./app/src/resources/static/index.html
+## ./app/src/main/resources/static/index.html
 
 ```html
 <!DOCTYPE html>
@@ -75,7 +75,7 @@ class AppTest {
     <title>Vanilla Spring Boot</title>
 </head>
 <body>
-    <h1>Hello Wordl</h1>
+    <h1>Hello World</h1>
 </body>
 </html>
 ```
