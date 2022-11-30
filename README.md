@@ -35,30 +35,6 @@ tasks.named('test') {
 }
 ```
 
-##
-
-```java
-package iths.se;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class App {
-
-    @Value( "${jdbc.url}" )
-    private String jdbcUrl;
-    
-    public static void main(String[] args) {
-        System.out.println("******************************");
-        System.out.println(jdbcUrl);
-        
-        SpringApplication.run(App.class, args);
-    }
-
-}
-````
-
 ## ./app/src/main/resources/application.properties
 
 ```properties
