@@ -10,6 +10,8 @@ touch ./app/src/main/resources/application-prod.properties
 
 ## ./app/build.gradle
 
+> Lägg till beroende till spring-boot-devtools.
+
 ```groovy
 plugins {
     id 'org.springframework.boot' version '2.6.4'
