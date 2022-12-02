@@ -1,62 +1,28 @@
 # edu-intro-java
 
+> I detta steg lägger vi inte till mycket. Vi bara förbereder att vi har två mijöer, utveckling och produktion.
+
 # Instruktioner
 
 ```bash
 cd ~
 cd ws
-rm -rf edu-intro-java #Försiktig med denna
-mkdir edu-intro-java
 cd edu-intro-java
-mkdir -p ./app/src/main/{java/se/iths,resources}
-mkdir -p ./app/src/test/{java/se/iths,resources}
-touch ./app/src/main/java/se/iths/App.java
-touch ./app/src/test/java/se/iths/AppTest.java
-touch ./app/build.gradle
-echo "# edu-intro-java" > README.md
-echo "rootProject.name = 'edu-intro-java'\ninclude('app')" > settings.gradle
-curl -L https://gist.githubusercontent.com/miwashiab/987826fc0f2df3cd686a755f38a1c504/raw/build.gradle -o ./app/build.gradle
-echo ".idea\n.gradle\nbuild\n*.log" > .gitignore
-git init
-git add .
-git commit -m "Initial commit"
+touch ./app/src/main/resources/{application.properties,application-dev.properties,application-prod.properties]
+echo 'spring.profiles.active=${ENV:dev}\nserver.port=${PORT:8081}' > ./app/src/main/resources/application.properties
+echo "spring.devtools.restart.enabled=true" > ./app/src/main/resources/application-dev.properties
+echo "spring.devtools.restart.enabled=false" > ./app/src/main/resources/application-prod.properties
 ```
 
-## App.java
+## ./app/build.gradle
 
-```java
-package se.iths;
-
-public class App {
-
-    public static void main(String[] args){
-        System.out.println("Hello World");
-    }
-}
-```
-
-
-## AppTest.java
-
-```java
-package se.iths;
-
-import org.junit.jupiter.api.Test;
-
-public class AppTest {
-
-    @Test
-    public void shouldTestSomething() throws Exception {
-        System.out.println("Testing World");
-    }
-}
-```
-
-## build.gradle
+> Lägg till beroende till spring-boot-devtools.
 
 ```groovy
 plugins {
-    id 'application'
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
 }
 
 repositories {
@@ -64,15 +30,62 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
-}
-
-application {
-    mainClass = 'se.iths.App'
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
     testLogging.showStandardStreams = true
 }
+```
+
+## application.properties
+
+
+```bash
+vi ./app/src/main/resources/application.properties
+```
+
+```properties
+spring.profiles.active=${ENV:dev}
+
+#Ta bort denna när vi är klara
+# detta är bara för att vi ska se
+# att vår våra inställningar fungerar
+server.port=8081
+```
+
+## application-dev.properties
+
+
+```bash
+vi ./app/src/main/resources/application-dev.properties
+```
+
+```properties
+spring.devtools.restart.enabled=true
+
+#Ta bort denna när vi är klara
+# detta är bara för att vi ska se
+# att vår våra inställningar fungerar
+server.port=8082
+```
+
+## application-prod.properties
+
+```bash
+vi ./app/src/main/resources/application-prod.properties
+```
+
+```properties
+spring.devtools.restart.enabled=false
+
+#Ta bort denna när vi är klara
+# detta är bara för att vi ska se
+# att vår våra inställningar fungerar
+server.port=8083
 ```
