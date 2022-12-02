@@ -87,7 +87,10 @@ touch ./app/build.gradle
 echo "# edu-intro-java" > README.md
 echo "rootProject.name = 'edu-intro-java'\ninclude('app')" > settings.gradle
 curl -L https://gist.githubusercontent.com/miwashiab/987826fc0f2df3cd686a755f38a1c504/raw/build.gradle -o ./app/build.gradle
-
+echo ".idea\n.gradle\nbuild\n*.log" > .gitignore
+git init
+git add .
+git commit -m "Initial commit"
 ```
 
 ## App.java
