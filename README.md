@@ -71,3 +71,16 @@ Project name (default: edu-intro-java): [enter]
 Source package (default: edu.intro.java): se.iths
 ```
 
+## För hand
+
+```bash
+mkdir edu-intro-java
+cd edu-intro-java
+mkdir -p ./app/src/main/{java/se/iths,resources}
+mkdir -p ./app/src/test/{java/se/iths,resources}
+touch ./app/src/main/java/se/iths/App.java
+touch ./app/src/test/java/se/iths/AppTest.java
+touch ./app/gradle.build
+echo "# edu-intro-java" > README.md
+echo "rootProject.name = 'edu-intro-java'\ninclude('app')" > settings.gradle
+```
