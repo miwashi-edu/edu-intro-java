@@ -3,10 +3,11 @@
 # Instruktioner
 
 ```bash
+cd ~
+cd ws
+cd edu-intro-java
 mkdir ./app/src/main/resources/static
-touch ./app/src/main/resources/static/index.html
-touch ./app/src/main/resources/static/index.css
-touch ./app/src/main/resources/static/index.js
+touch ./app/src/main/resources/static/{index.html,index.js,index.css}
 ```
 
 ## ./app/build.gradle
@@ -69,14 +70,14 @@ class AppTest {
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Vanilla Spring Boot</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <script src='/index.js'/>
+    </body>
 </html>
 ```
 
