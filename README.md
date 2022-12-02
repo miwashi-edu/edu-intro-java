@@ -52,7 +52,6 @@ spring.profiles.active=${ENV:dev}
 # detta är bara för att vi ska se
 # att vår våra inställningar fungerar
 server.port=8081
-jdbc.url=Detta kommer att bli en connection string!
 ```
 
 ## ./app/src/main/resources/application-dev.properties
