@@ -1,5 +1,7 @@
 # edu-intro-java
 
+> Omvandlar en java applikation till en Spring Boot applikation
+
 # Instruktioner
 
 ```bash
