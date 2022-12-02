@@ -111,3 +111,27 @@ vi ./app/src/main/resources/static/index.html
 </html>
 ```
 
+## build.gradle
+
+```groovy
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+}
+
+application {
+    mainClass = 'se.iths.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+}
+```
