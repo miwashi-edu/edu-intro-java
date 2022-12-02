@@ -1,5 +1,7 @@
 # edu-intro-java
 
+> I detta steg lägger vi inte till mycket. Vi bara förbereder att vi har två mijöer, utveckling och produktion.
+
 # Instruktioner
 
 ```bash
