@@ -43,7 +43,12 @@ tasks.named('test') {
 }
 ```
 
-## ./app/src/main/resources/application.properties
+## application.properties
+
+
+```bash
+vi ./app/src/main/resources/application.properties
+```
 
 ```properties
 spring.profiles.active=${ENV:dev}
@@ -54,7 +59,12 @@ spring.profiles.active=${ENV:dev}
 server.port=8081
 ```
 
-## ./app/src/main/resources/application-dev.properties
+## application-dev.properties
+
+
+```bash
+vi ./app/src/main/resources/application-dev.properties
+```
 
 ```properties
 spring.devtools.restart.enabled=true
@@ -65,7 +75,11 @@ spring.devtools.restart.enabled=true
 server.port=8082
 ```
 
-## ./app/src/main/resources/application-prod.properties
+## application-prod.properties
+
+```bash
+vi ./app/src/main/resources/application-prod.properties
+```
 
 ```properties
 spring.devtools.restart.enabled=false
