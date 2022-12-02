@@ -12,7 +12,12 @@ mkdir ./app/src/main/resources/static
 touch ./app/src/main/resources/static/{index.html,index.js,index.css}
 ```
 
-## ./app/build.gradle
+## build.gradle
+
+```bash
+vi ./app/build.gradle
+```
+
 ```groovy
 plugins {
     id 'org.springframework.boot' version '2.6.4'
@@ -36,7 +41,11 @@ tasks.named('test') {
 }
 ```
 
-## ./app/src/main/java/se/iths/App.java
+## App.java
+
+```bash
+vi ./app/src/test/java/se/iths/App.java
+```
 
 ```java
 package se.iths;
@@ -53,7 +62,11 @@ public class App {
 }
 ```
 
-## ./app/src/test/java/se/iths/AppTest.java
+## AppTest.java
+
+```bash
+vi ./app/src/test/java/se/iths/AppTest.java
+```
 
 ```java
 package se.iths;
@@ -68,7 +81,11 @@ class AppTest {
 }
 ```
 
-## ./app/src/main/resources/static/index.html
+## index.html
+
+```bash
+vi ./app/src/main/resources/static/index.html
+```
 
 ```html
 <!DOCTYPE html>
