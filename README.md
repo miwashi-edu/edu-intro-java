@@ -12,7 +12,7 @@ mkdir ./app/src/main/resources/static
 touch ./app/src/main/resources/static/{index.html,index.js,index.css}
 curl -L https://gist.github.com/miwashiab/e393185947f8b29d064746d1633c5a4d/raw/build.gradle -o ./app/build.gradle
 curl -L https://gist.github.com/miwashiab/44bb4bc1d82f0952ffbf6c55fbd63ec8/raw/index.html -o ./app/src/main/resources/static/index.html
-curl -L https://gist.github.com/miwashiab/018e7eb1c7b9556e4c2ac5076a6126a0/raw/App.java -o ./app/src/test/java/se/iths/App.java
+curl -L https://gist.github.com/miwashiab/018e7eb1c7b9556e4c2ac5076a6126a0/raw/App.java -o ./app/src/main/java/se/iths/App.java
 curl -L https://gist.github.com/miwashiab/0ca40c177e62925e8dbb973229a4299d/raw/AppTest.java -o ./app/src/test/java/se/iths/AppTest.java
 git add .
 git commit -m "Changed to Spring Boot Application"
