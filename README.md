@@ -74,6 +74,9 @@ Source package (default: edu.intro.java): se.iths
 ## För hand
 
 ```bash
+cd ~
+cd ws
+rm -rf edu-intro-java #Försiktig med denna
 mkdir edu-intro-java
 cd edu-intro-java
 mkdir -p ./app/src/main/{java/se/iths,resources}
