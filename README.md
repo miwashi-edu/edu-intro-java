@@ -8,7 +8,7 @@
 cd ~
 cd ws
 cd edu-intro-java
-touch ./app/src/main/resources/{application.properties,application-dev.properties,application-prod.properties]
+touch ./app/src/main/resources/{application.properties,application-dev.properties,application-prod.properties}
 echo 'spring.profiles.active=${ENV:dev}\nserver.port=${PORT:8081}' > ./app/src/main/resources/application.properties
 echo "spring.devtools.restart.enabled=true" > ./app/src/main/resources/application-dev.properties
 echo "spring.devtools.restart.enabled=false" > ./app/src/main/resources/application-prod.properties
