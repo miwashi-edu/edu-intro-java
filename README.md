@@ -125,3 +125,19 @@ org.gradle.configuration-cache=true
 EOF
 ```
 
+## Test it
+
+```bash
+gradle run
+gradle test
+gradle check
+```
+
+## Repeat it
+
+```bash
+git reset --hard
+git clean -df
+```
+
+
