@@ -1,31 +1,47 @@
 # edu-intro-java
 
-# Instruktioner
+# Create Workspace
+
+```bash
+cd ~
+mkdir ws
+```
+
+# Prepare
 
 ```bash
 cd ~
 cd ws
-rm -rf edu-intro-java #Försiktig med denna
-mkdir edu-intro-java
-cd edu-intro-java
-mkdir -p ./app/src/main/{java/se/iths,resources}
-mkdir -p ./app/src/test/{java/se/iths,resources}
-touch ./app/src/main/java/se/iths/App.java
-touch ./app/src/test/java/se/iths/AppTest.java
-touch ./app/build.gradle
-echo "# edu-intro-java" > README.md
-echo "rootProject.name = 'edu-intro-java'\ninclude('app')" > settings.gradle
-curl -L https://gist.githubusercontent.com/miwashiab/987826fc0f2df3cd686a755f38a1c504/raw/build.gradle -o ./app/build.gradle
-echo ".idea\n.gradle\nbuild\n*.log" > .gitignore
+mkdir intro-java
+cd intro-java
+curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Java.gitignore
+echo "# Intro Java" > README.md
 git init
 git add .
-git commit -m "Initial commit"
+git commit -m "Initial Commit"
+```
+
+
+# Instructions
+
+```bash
+cd ~
+cd ws
+cd intro-java
+mkdir -p ./app/src/main/{java/net/miwashi,resources}
+mkdir -p ./app/src/test/{java/net/miwashi,resources}
+touch ./app/src/main/java/net/miwashi/App.java
+touch ./app/src/test/java/net/miwashi/AppTest.java
+touch ./app/build.gradle
+touch settings.gradle
+touch gradle.properties
 ```
 
 ## App.java
 
 ```java
-package se.iths;
+cat > ./app/src/main/java/net/miwashi/App.java << 'EOF'
+package net.miwashi;
 
 public class App {
 
@@ -33,13 +49,15 @@ public class App {
         System.out.println("Hello World");
     }
 }
+EOF
 ```
 
 
 ## AppTest.java
 
 ```java
-package se.iths;
+cat > ./app/src/test/java/net/miwashi/AppTest.java << 'EOF'
+package net.miwashi;
 
 import org.junit.jupiter.api.Test;
 
@@ -50,11 +68,13 @@ public class AppTest {
         System.out.println("Testing World");
     }
 }
+EOF
 ```
 
-## build.gradle
+## ./app/build.gradle
 
-```groovy
+```bash
+cat > ./app/build.gradle << 'EOF'
 plugins {
     id 'application'
 }
@@ -64,15 +84,44 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.1"'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 application {
-    mainClass = 'se.iths.App'
+    mainClass = 'net.miwashi.App'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
     testLogging.showStandardStreams = true
 }
+EOF
 ```
+
+## settings.gradle
+
+```bash
+cat > settings.gradle << 'EOF'
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.10.0'
+}
+
+rootProject.name = 'intro-java'
+include('app')
+EOF
+```
+## gradle.properties
+
+```bash
+cat > gradle.properties << 'EOF'
+org.gradle.configuration-cache=true
+EOF
+```
+
