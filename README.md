@@ -6,6 +6,9 @@
 # Prepare
 
 ```bash
+cd ~
+cd ws
+cd intro-java
 git add .
 git commit -m "Level-0"
 ```
@@ -15,7 +18,7 @@ git commit -m "Level-0"
 ```bash
 cd ~
 cd ws
-cd edu-intro-java
+cd intro-java
 mkdir ./app/src/main/resources/static
 touch ./app/src/main/resources/static/{index.html,index.js,index.css}
 touch ./app/src/main/resources/application.properties
@@ -114,6 +117,9 @@ EOF
 ## Test it
 
 ```bash
+cd ~
+cd ws
+cd intro-java
 gradle bootRun
 curl http://localhost:8080
 ```
@@ -121,6 +127,9 @@ curl http://localhost:8080
 ## Repeat
 
 ```bash
+cd ~
+cd ws
+cd intro-java
 git reset --hard
 git clear -df
 ```
