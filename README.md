@@ -99,7 +99,7 @@ tasks.register("bootDev", BootRun) {
 
 tasks.register("bootStage", BootRun) {
     group = "application"
-    description = "Run app with dev profile"
+    description = "Run app with stage profile"
 
     classpath = sourceSets.main.runtimeClasspath
 	mainClass = tasks.bootRun.mainClass
