@@ -82,6 +82,25 @@ tasks.named('test') {
 	useJUnitPlatform()
     testLogging.showStandardStreams = true
 }
+
+tasks.register("bootDev", BootRun) {
+    group = "application"
+    description = "Run app with dev profile"
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass.set("se.miwashi.App")
+    systemProperty "spring.profiles.active", "dev"
+}
+
+
+tasks.register("bootStage", BootRun) {
+    group = "application"
+    description = "Run app with dev profile"
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass.set("se.miwashi.App")
+    systemProperty "spring.profiles.active", "stage"
+}
 EOF
 ```
 
