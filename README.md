@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -63,7 +63,7 @@ EOF
 ## App.java
 
 ```bash
-cat > ./app/src/test/java/net/miwashi/App.java << 'EOF'
+cat > ./app/src/main/java/net/miwashi/App.java << 'EOF'
 package net.miwashi;
 
 import org.springframework.boot.SpringApplication;
@@ -77,6 +77,7 @@ public class App {
 	}
 
 }
+EOF
 ```
 
 ## AppTest.java
