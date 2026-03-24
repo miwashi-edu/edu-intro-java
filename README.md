@@ -83,12 +83,16 @@ tasks.named('test') {
     testLogging.showStandardStreams = true
 }
 
+// ******************************
+// REST IS BONUS. NO NEED TO KNOW
+import org.springframework.boot.gradle.tasks.run.BootRun
+
 tasks.register("bootDev", BootRun) {
     group = "application"
     description = "Run app with dev profile"
 
     classpath = sourceSets.main.runtimeClasspath
-    mainClass.set("se.miwashi.App")
+	mainClass = tasks.bootRun.mainClass
     systemProperty "spring.profiles.active", "dev"
 }
 
@@ -98,9 +102,10 @@ tasks.register("bootStage", BootRun) {
     description = "Run app with dev profile"
 
     classpath = sourceSets.main.runtimeClasspath
-    mainClass.set("se.miwashi.App")
+	mainClass = tasks.bootRun.mainClass
     systemProperty "spring.profiles.active", "stage"
 }
+
 EOF
 ```
 
@@ -111,4 +116,28 @@ EOF
 ```bash
 gradle bootRun
 curl http://localhost:8080
+```
+
+### Stage
+
+```bash
+ENV=stage gradle bootRun
+SPRING_PROFILES_ACTIVE=stage gradle bootRun
+gradle bootRun --args='--spring.profiles.active=stage'
+curl http://localhost:8082
+
+# Bonus!
+gradle bootStage
+```
+
+### Dev
+
+```bash
+ENV=dev gradle bootRun
+SPRING_PROFILES_ACTIVE=dev gradle bootRun
+gradle bootRun --args='--spring.profiles.active=dev'
+curl http://localhost:8081
+
+# Bonus!
+gradle bootDev
 ```
