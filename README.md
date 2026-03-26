@@ -17,7 +17,7 @@ git commit -m "lvel-2"
 cd ~
 cd ws
 cd intro-java
-rm -rf /app/src/main/resources/static
+rm -rf /app/src/main/resources/static # Remove static html
 ```
 
 ### ./src/main/java/net/miwashi/AuthController.java
