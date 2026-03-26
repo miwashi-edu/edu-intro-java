@@ -7,7 +7,7 @@ cd ~
 cd ws
 cd intro-java
 git add .
-git commit -m "lvel-2"
+git commit -m "level-2"
 ```
 
 
@@ -69,6 +69,9 @@ EOF
 ```
 
 ### New Dependencies
+
+> We add [Swagger](https://swagger.io), and [Actuator](https://www.baeldung.com/spring-boot-actuators)
+> We also add a [redirect](https://en.wikipedia.org/wiki/URL_redirection) for root, not [rewrite](https://www.dokuwiki.org/rewrite).
 
 ```groovy
 dependencies {
