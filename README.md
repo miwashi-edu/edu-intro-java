@@ -31,9 +31,11 @@ EOF
 
 > We add TRACE logging.
 > We add ACCESS logging.
-> We add JASYPT.
-> We add Lombook.
-> We add Hibernate Validator
+> We add [JASYPT](https://github.com/jasypt/jasypt).  
+> We add [Lombook](https://projectlombok.org).  
+> We add [Hibernate Validator](https://hibernate.org/validator/)  
+
+> [Test jasypt](https://www.devglan.com/online-tools/jasypt-online-encryption-decryption)  
 
 ```groovy
 dependencies {
